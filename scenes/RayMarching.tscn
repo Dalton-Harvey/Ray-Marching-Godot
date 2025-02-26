@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccuya1lyg4p8l"]
+
+[ext_resource type="Material" uid="uid://dm1sqdthj24g0" path="res://shaders/ray_marching_material.tres" id="1_52lxy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_thmhf"]
+
+[node name="RayMarching" type="Node3D"]
+transform = Transform3D(0.999946, 0.0103671, 0, -0.0103623, 0.999484, -0.0304164, -0.000315329, 0.0304148, 0.999537, 0.0352312, 0.036423, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 1.90994e-10, 0, 3.07409e-10, 3, 7.45058e-09, 0, -7.45058e-09, 3, 0.065, 0.512, 0.011)
+material_override = ExtResource("1_52lxy")
+mesh = SubResource("BoxMesh_thmhf")
