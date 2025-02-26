@@ -6,6 +6,8 @@ uniform int MAX_STEPS = 100;
 uniform float MAX_DIST = 100.0;
 uniform float Collision_thres = 0.01;
 uniform float Blend = 1.0;
+uniform float TIMESCALE = 0.1;
+uniform float SHAPESIZE = 1.0;
 
 //sphere parameters
 uniform float sphere_r = 1.0;
@@ -61,9 +63,23 @@ float S_Intersection(float d1, float d2, float k)
 
 float sceneSDF(vec3 p)
 {
-	float shape = sphereSDF(p,sphere_pos, sphere_r);
-	float shape2 = boxSDF(p, box_pos, box_dims);
-	return S_Union(shape,shape2, Blend);
+	float t = TIME*TIMESCALE;
+	
+	vec3 sphere1_pos = vec3(sin(t*0.337), abs(sin(t*0.428)), sin(t*-0.989));
+	vec3 sphere2_pos = vec3(sin(t*-0.214), abs(sin(t*-0.725)), sin(t*0.56));
+	vec3 sphere3_pos = vec3(sin(t*-0.617), abs(sin(t*0.272)), sin(t*0.773));
+	
+	vec3 movescale = vec3(0.2,3.0,0.2);
+	
+	float sphere = sphereSDF(p,sphere1_pos*movescale, SHAPESIZE*0.5);
+	float sphere2 = sphereSDF(p, sphere2_pos*movescale, SHAPESIZE*0.75);
+	float sphere3 = sphereSDF(p, sphere3_pos*movescale, SHAPESIZE);
+	float sphere4 = sphereSDF(p, vec3(0.0), 0.8);
+	
+	float spheres= S_Union(sphere,sphere2,Blend);
+	spheres = S_Union(spheres, sphere3, Blend);
+	spheres = S_Union(spheres, sphere4,Blend);
+	return spheres;
 }
 
 float testRayMarch(vec3 ro, vec3 rd)
