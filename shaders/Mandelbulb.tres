@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d1a0eropsilph"]
+
+[ext_resource type="Shader" path="res://shaders/Mandelbulb.gdshader" id="1_cc2xa"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_cc2xa")
+shader_parameter/MAX_STEPS = 100
+shader_parameter/MAX_DIST = 100.0
+shader_parameter/Collision_thres = 0.001
+shader_parameter/BLEND = 1.0
+shader_parameter/POWER = 2
+shader_parameter/MAX_ITERS = 15
+shader_parameter/LightDir = Vector3(50, -30, 0)
+shader_parameter/colorAmix = Vector3(0, 0, 0.155)
+shader_parameter/colorBmix = Vector3(0.74, 0, 0)
+shader_parameter/darkness = 75
+shader_parameter/animationtime = 1.0

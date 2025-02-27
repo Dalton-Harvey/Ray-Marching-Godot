@@ -82,6 +82,14 @@ float sceneSDF(vec3 p)
 	return spheres;
 }
 
+float testsceneSDF(vec3 p)
+{
+	float sphere = sphereSDF(p, sphere_pos, sphere_r);
+	float box = boxSDF(p, box_pos, box_dims);
+	
+	return S_Union(sphere, box, Blend);
+}
+
 float testRayMarch(vec3 ro, vec3 rd)
 {
 	float depth = 0.0;

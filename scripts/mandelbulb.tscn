@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh75yb5ea6xt7"]
+
+[ext_resource type="Material" uid="uid://d1a0eropsilph" path="res://shaders/Mandelbulb.tres" id="1_a2bjl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_h18h2"]
+
+[node name="Mandelbulb" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.835, 0, 0, 0, 2.835, 0, 0, 0, 2.835, -0.0243659, 0.058707, -0.0425155)
+material_override = ExtResource("1_a2bjl")
+mesh = SubResource("BoxMesh_h18h2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.844216, 0, -0.536004, 0, 1, 0, 0.536004, 0, 0.844216, -1.09379, 0, 2.06943)
