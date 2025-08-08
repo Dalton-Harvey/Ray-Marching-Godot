@@ -89,8 +89,8 @@ The BLEND variable is just used to change the strength of the blending between t
 Only the very basics of Ray Marching are covered here for further reading use the references listed below to go more in-depth. May update this notes page if I decide to go more in-depth.
 # References:
 -------------------------------
-[Sebastian Lague Ray Marching Video](https://www.youtube.com/watch?v=Cp5WWtMoeKg)
-[It Takes Two Lava lamp ray marching recreation](https://www.youtube.com/watch?v=jH0MD8obOCQ&t=612s)
+[Sebastian Lague Ray Marching Video](https://www.youtube.com/watch?v=Cp5WWtMoeKg)<br>
+[It Takes Two Lava lamp ray marching recreation](https://www.youtube.com/watch?v=jH0MD8obOCQ&t=612s)<br>
 [Ray Marching wiki](https://en.wikipedia.org/wiki/Ray_marching)
 [Inigo Quilez Smooth Minimum](https://iquilezles.org/articles/smin/)
 [Inigo Quilez Distance Functions](https://iquilezles.org/articles/distfunctions/)
